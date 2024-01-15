@@ -3,13 +3,16 @@ package Domain;
 import java.util.Iterator;
 import java.util.List;
 
-public class StudentGroup implements Iterable<Student> {
+public class StudentGroup  implements Iterable<Student>, Comparable<StudentGroup> {
     private List<Student> group;
     private Integer idGroup;
+    int totalStudents;
+
 
     public StudentGroup(List<Student> group, Integer idGroup) {
         this.group = group;
         this.idGroup = idGroup;
+        totalStudents = group.size();
     }
 
     public List<Student> getGroup() {
@@ -30,45 +33,31 @@ public class StudentGroup implements Iterable<Student> {
 
      @Override
     public String toString() {
-        return "StudentGroup{" +
-                "group=" + group +
-                ", idGroup=" + idGroup +
-                '}';
+        return "StudentGroup{ id Группы: " + idGroup + ", Количество студентов: " + totalStudents + ", Список студентов: " + group;
     }
 
-    // @Override
-    // public Iterator<Student> iterator() {
-    //    return new Iterator<Student>() {
-
-    //     private int counter;
-
-    //     @Override
-    //     public boolean hasNext() {
-
-    //         if(counter<group.size())
-    //         {
-    //             return true;
-    //         }
-    //         else
-    //         {
-    //             return false;
-    //         }            
-    //     }
-
-    //     @Override
-    //     public Student next() {            
-    //         return group.get(counter++);
-    //     }
-        
-    //    };
-        
-    // }
 
      @Override
     public Iterator<Student> iterator() {
        return new StudentIterator(group);
         
     }
-    
-    
+
+
+    @Override
+    public int compareTo(StudentGroup o) {
+        if (group.size() == o.group.size()){
+            if (this.getIdGroup().equals(o.getIdGroup())) {
+                return 0;
+            }
+            if (this.getIdGroup() > o.getIdGroup()) {
+                return 1;
+            }
+            return -1;
+        }
+        if (group.size() > o.group.size()){
+            return 1;
+        }
+        return -1;
+    }
 }
