@@ -1,11 +1,19 @@
 package Domain;
 
 
+/**
+ * Класс Student, который описывает студента
+ */
 public class Student extends Person implements Comparable<Student> {
 
     private int id;
     private static int generalId;
 
+    /**
+     * Конструктор класса Student с параметрами name и age
+     * @param name Имя студента
+     * @param age Возраст студента
+     */
     public Student(String name, int age) {
         super(name, age);
         this.id = generalId;

@@ -3,12 +3,20 @@ package Domain;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ * Класс StudentSteam описывающий поток студентов
+ */
 public class StudentSteam implements Iterable {
     private int number;
     private List<StudentGroup> listGroup;
     private int totalGroups;
 
 
+    /**
+     * Контсруктор класса StudentSteam с параметрами number и listGroup
+     * @param number
+     * @param listGroup
+     */
     public StudentSteam (int number, List<StudentGroup> listGroup) {
         this.number = number;
         this.listGroup = listGroup;

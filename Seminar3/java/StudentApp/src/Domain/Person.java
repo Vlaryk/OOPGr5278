@@ -1,9 +1,17 @@
 package Domain;
 
+/**
+ *  Абстрактный класс Person, описывающий человека
+ */
 public abstract class Person {
     private String name;
     private int age;
-    
+
+    /**
+     * Конструктор класса Person с параметрами name и age
+     * @param name Имя человека
+     * @param age Возраст человека
+     */
     public Person(String name, int age) {
         this.name = name;
         this.age = age;

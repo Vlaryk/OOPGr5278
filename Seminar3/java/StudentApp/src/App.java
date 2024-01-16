@@ -6,6 +6,9 @@ import Domain.Student;
 import Domain.StudentGroup;
 import Domain.StudentSteam;
 
+/**
+ * Главный класс приложения
+ */
 public class App {
     public static void main(String[] args) throws Exception {
         

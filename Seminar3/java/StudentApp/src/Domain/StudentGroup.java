@@ -3,12 +3,21 @@ package Domain;
 import java.util.Iterator;
 import java.util.List;
 
+
+/**
+ * Класс StudentGroup, который описывает группу студента
+ */
 public class StudentGroup  implements Iterable<Student>, Comparable<StudentGroup> {
     private List<Student> group;
     private Integer idGroup;
     int totalStudents;
 
 
+    /**
+     * Конструктор класса StudentGroup c параметрами group и idGroup
+     * @param group - список студентов
+     * @param idGroup - id группы
+     */
     public StudentGroup(List<Student> group, Integer idGroup) {
         this.group = group;
         this.idGroup = idGroup;
